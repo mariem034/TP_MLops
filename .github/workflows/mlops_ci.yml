@@ -25,5 +25,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Exécution des tests unitaires et d'intégration (Pytest)
+        env:
+          PYTHONPATH: ${{ github.workspace }}
         run: |
-          pytest -v tests/
+          python -m pytest -v tests/
